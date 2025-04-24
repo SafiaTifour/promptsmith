@@ -1,0 +1,69 @@
+create_objectives_instructions:
+  description: >
+    Create clear, compact objectives and instructions for the prompt based on the prompt_task and prompt_requirements.
+    Focus on directness and covering all potential edge cases without verbosity.
+    Include explicit instructions for handling exceptions and edge cases in the fewest words possible.
+    IMPORTANT: Do NOT use placeholders or variable names. Write the actual content that will be used directly.
+        This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+        Additional Instructions: {additional_instructions}
+  expected_output: >
+    A concise set of objectives and instructions that clearly communicate the task requirements
+    and handling of all potential cases, optimized for token efficiency. The content should be
+    final and ready to use, not a template.
+  agent: objective_instruction_designer
+
+develop_examples:
+  description: >
+    Create representative examples that clearly demonstrate the expected output format for the prompt_task.
+    Ensure examples cover typical cases and are formatted exactly as the desired output.
+    Keep examples minimal while still being fully illustrative.
+    IMPORTANT: Use real, concrete examples, not placeholders.
+        This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+        Additional Instructions: {additional_instructions}
+  expected_output: >
+    1-2 clear examples that perfectly demonstrate the expected output format and content,
+    requiring no additional explanation. Examples should be final and ready to use.
+  agent: example_specialist
+
+identify_variables:
+  description: >
+    Identify the specific variable placeholders needed in the prompt for the prompt_task.
+    These should be simple, clear markers like input_text, query, date, etc.
+    Do NOT create complex variable naming structures with dollar signs or nested syntax.
+        This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+        Additional Instructions: {additional_instructions}
+  expected_output: >
+    A list of simple, user-friendly variables with their intended purpose.
+    Variables should follow the format variable_name without complex syntax.
+  agent: variable_expert
+
+synthesize_short_prompt:
+  description: >
+    Integrate all components into a compact, effective short prompt for the prompt_task.
+    Create a direct, usable prompt that works for the specific task.
+    The prompt should be immediately usable without further editing.
+    IMPORTANT: Do NOT include meta-instructions about how to enhance the prompt.
+    Do NOT use placeholder syntax like Insert $VARIABLE$. Use only simple variables
+    like input_text where needed to represent where user input would go.
+    If additional_instructions are provided, follow them precisely.
+        This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+        Additional Instructions: {additional_instructions}
+  expected_output: >
+    A complete, token-efficient short prompt that is immediately usable.
+    The prompt should contain direct instructions, concrete examples, and
+    simple variable placeholders where needed. It should follow this structure:
+    1. Clear objective and instructions (including edge case handling)
+    2. At least one concrete example with input and output
+  agent: short_prompt_synthesizer

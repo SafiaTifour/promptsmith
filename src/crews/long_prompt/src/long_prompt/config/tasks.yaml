@@ -1,0 +1,86 @@
+create_role_persona:
+  description: >
+    Create a compelling role and persona for the prompt based on the user's requirements.
+    The role should define who the AI is pretending to be, while the persona should describe 
+    specific qualities relevant to this task. Focus on qualities that will enhance task 
+    performance and guide thinking approach.
+            This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+  expected_output: >
+    A clear role definition and detailed persona with specific qualities tailored to the 
+    task requirements. Include explanations of why these qualities are important for the task.
+  agent: role_persona_designer
+
+design_objective:
+  description: >
+    Create a clear, direct objective statement and chain-of-thought process for the prompt.
+    The objective should clearly state what needs to be done, while the chain of thought
+    should guide the AI through a step-by-step thinking process to produce high-quality results.
+            This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+  expected_output: >
+    A concise objective statement that clearly communicates the task, followed by a detailed 
+    chain-of-thought process that guides reasoning step by step.
+  agent: objective_designer
+
+develop_context:
+  description: >
+    Create rich contextual frameworks that explain why this task is important.
+    Focus on motivational elements that improve task performance by providing a bigger picture
+    of how this work fits into larger goals or why it matters.
+            This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+  expected_output: >
+    A compelling context section that explains the importance and impact of the task, providing
+    motivation and a framework for understanding the significance of high-quality output.
+  agent: context_specialist
+
+craft_instructions:
+  description: >
+    Develop comprehensive instructions with built-in error prevention.
+    Include all rules to be followed, output structure requirements, and anticipate
+    potential mistakes or failure modes. Create preemptive guidance to avoid common pitfalls.
+            This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+  expected_output: >
+    Detailed instructions with clear rules, specific output format requirements, and
+    explicit guidance on avoiding common mistakes or misunderstandings.
+  agent: instruction_engineer
+
+design_examples:
+  description: >
+    Create high-quality input/output examples that demonstrate ideal responses.
+    If no examples are available, create quality examples that show the desired
+    structure, reasoning approach, and output format.
+            This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+  expected_output: >
+    At least two clear input/output examples that illustrate ideal prompt responses,
+    demonstrating proper structure, reasoning, and format.
+  agent: example_architect
+
+synthesize_long_prompt:
+  description: >
+    Integrate all components into a coherent, effective long-form prompt.
+    Ensure key points are strategically positioned at the beginning and end of the prompt
+    for maximum attention. Maintain coherence throughout while highlighting critical elements.
+    Include space for variables and emphasize important notes.
+            This is the prompt provided by the user:
+        Prompt Task: {prompt_task}
+        Prompt requirements : {prompt_requirements}
+        Output format: {output_format}
+  expected_output: >
+    A complete, well-structured long-form prompt that integrates all components in a coherent flow.
+    The prompt should have strategic emphasis on key points, clear variable placeholders, and
+    important notes highlighted effectively.
+  agent: prompt_synthesizer

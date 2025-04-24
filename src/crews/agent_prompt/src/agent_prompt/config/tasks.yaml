@@ -1,0 +1,59 @@
+analyze_prompt_structure:
+  description: >
+    Analyze the provided prompt for structural issues, ambiguity, and clarity.
+    Identify missing components based on the agent prompting framework:
+    1. Role/Persona
+    2. Objective/task
+    3. Context
+    4. Standard Operating Procedures (SOP)
+    5. Instructions and rules
+    6. Tools and subagents
+    7. Examples
+    And this is the original prompt the user gave {original_prompt}
+  expected_output: >
+    A detailed analysis of the prompt's structure, highlighting strengths and 
+    weaknesses in each section of the framework. Provide specific recommendations 
+    for improvement.
+  agent: prompt_analyzer
+
+analyze_agent_interpretation:
+  description: >
+    Analyze how an AI agent would likely interpret the provided prompt.
+    Identify potential misinterpretations, confusion points, or areas where
+    the agent might not follow the user's intentions.
+  expected_output: >
+    A detailed analysis of how an AI agent would process the prompt, with specific
+    focus on points of potential confusion or misalignment with user intent.
+    Include suggestions for clearer communication.
+    And this is the original prompt the user gave {original_prompt}
+  agent: agent_psychology_expert
+
+restructure_prompt:
+  description: >
+    Apply the best-practice agent prompting framework to restructure the user's prompt:
+    1. Role/Persona
+    2. Objective/task
+    3. Context
+    4. SOP (numerical steps with IF conditions where appropriate)
+    5. Instructions and rules
+    6. Tools and subagents (with context on when/how to use)
+    7. Examples
+    And this is the original prompt the user gave {original_prompt}
+  expected_output: >
+    A restructured version of the prompt following the framework, clearly
+    identifying each section and ensuring all components are properly addressed.
+  agent: framework_specialist
+
+create_enhanced_prompt:
+  description: >
+    Synthesize all analysis and recommendations to create a comprehensive enhanced prompt.
+    Ensure the prompt is clear, structured, and optimized for AI agent interpretation.
+    Make sure it follows all best practices for agent prompting, including
+    proper role definition, clear objectives, detailed SOPs, well-defined tools/subagents,
+    and helpful examples.
+    And this is the original prompt the user gave {original_prompt}
+  expected_output: >
+    A complete enhanced prompt ready for use with an AI agent. The prompt should be
+    comprehensive, clear, and follow the recommended structure. Include an explanation
+    of the enhancements made and why they will improve agent performance.
+  agent: prompt_enhancer
