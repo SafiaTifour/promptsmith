@@ -73,11 +73,6 @@ promptsmi‍th/
 ```
 
 
-
-## License
-
-[MIT License](LICENSE)
-
 ## Acknowledgements
 
 - [CrewAI](https://github.com/joaomdmoura/crewAI) for the agent framework
